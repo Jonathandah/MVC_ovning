@@ -13,10 +13,21 @@ function log(){
         familyname: familyname,
         age: age,
     };
-    
+
    todo.person(object);
+   render.header(todo.list);
    render.tabell(todo.list);
 }
+
+function search (){
+    console.log(todo.list);
+    let searchItem = document.querySelector("#searchItem").value;
+    render.tableSearch(searchItem, todo.list);
+}
+
+
+let searchbutton = document.querySelector("#sök");
+searchbutton.addEventListener("click", search);
 
 let button = document.querySelector("button");
 button.addEventListener("click", log);
