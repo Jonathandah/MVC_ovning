@@ -31,11 +31,19 @@ export default  {
     },
 
     tableSearch: function(searchItem, todo){
-        for(let keys in todo){
-            let object = todo[keys];
+        let tbody = document.querySelector("tbody");
+        tbody.innerHTML ="";
+        for(let value in todo){
+            let object = todo[value];
+            let row = document.createElement('tr');
             for(let keys in object){
                 if(searchItem === object[keys]){
-                    console.log(object);
+                    for(let keys in object){
+                        let td = document.createElement('td');
+                        td.textContent = object[keys];
+                        row.appendChild(td);
+                        tbody.appendChild(row);
+                    }
                 }
             }
         }
