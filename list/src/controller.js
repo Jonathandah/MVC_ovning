@@ -3,7 +3,7 @@ import render from "./view.js"
 
 
 function log(){
-    
+    let form = document.querySelector("form");
     let name = document.querySelector("#name").value
     let familyname = document.querySelector("#familyname").value
     let age = document.querySelector("#age").value
@@ -17,6 +17,7 @@ function log(){
    todo.person(object);
    render.header(todo.list);
    render.tabell(todo.list);
+   form.reset()
 }
 
 function search (){
